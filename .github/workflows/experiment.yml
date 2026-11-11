@@ -1,0 +1,36 @@
+name: 实验数据生成
+
+# 手动触发: 生成 AI方案 vs 传统脚本 的对比实验数据
+on:
+  workflow_dispatch:
+    inputs:
+      rounds:
+        description: "每方案签到次数"
+        required: false
+        default: "100"
+
+jobs:
+  experiment:
+    name: 对比实验
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run comparison experiment
+        run: python main.py --compare ${{ github.event.inputs.rounds }}
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: experiment-results
+          path: |
+            experiments/results.json
+            experiments/results.md

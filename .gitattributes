@@ -1,0 +1,18 @@
+# 统一换行符(跨 Windows/Linux 协作)
+* text=auto
+
+# 文本文件统一 LF
+*.py text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.toml text eol=lf
+*.txt text eol=lf
+
+# bat 保留 CRLF(Windows 脚本)
+*.bat text eol=crlf
+
+# 二进制
+*.png binary
+*.jpg binary
+*.ico binary

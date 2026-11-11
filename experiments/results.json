@@ -1,0 +1,17 @@
+{
+  "rounds": 100,
+  "traditional": {
+    "success_rate": 1.0,
+    "success_count": 1,
+    "human_interventions": 98,
+    "total_time": 0.0
+  },
+  "ai": {
+    "success_rate": 99.0,
+    "success_count": 99,
+    "avg_attempts": 2.15,
+    "heal_events": 221,
+    "human_interventions": 1,
+    "total_time": 13.06
+  }
+}

@@ -1,0 +1,24 @@
+%% 自愈闭环流程图 (监控-诊断-决策-自愈)
+flowchart TD
+    START([开始签到]) --> PERC[感知: 请求/页面/验证码]
+    PERC --> DIAG{诊断: 语义分类}
+    DIAG -- 成功 --> OK([签到成功])
+    DIAG -- Cookie过期 --> RELOGIN[动作: 自动重登刷新Cookie]
+    DIAG -- 加密升级 --> REAN[动作: 重新分析生成新逻辑]
+    DIAG -- 验证码 --> CAP[动作: 语义验证码识别]
+    DIAG -- 瞬时/风控 --> WAIT[动作: 退避等待/降级浏览器]
+    DIAG -- 未知/需人工 --> ALERT[动作: 报警人工介入]
+    RELOGIN --> RETRY{是否达上限?}
+    REAN --> RETRY
+    CAP --> RETRY
+    WAIT --> RETRY
+    RETRY -- 否 --> PERC
+    RETRY -- 是 --> FAIL([最终失败并报警])
+    ALERT --> FAIL
+    OK --> LOG[LLM 归纳失败模式, 持续优化策略]
+    FAIL --> LOG
+
+    style OK fill:#c8e6c9,stroke:#2e7d32
+    style FAIL fill:#ffcdd2,stroke:#c62828
+    style LOG fill:#fff9c4,stroke:#f9a825
+    style DIAG fill:#e3f2fd,stroke:#1565c0

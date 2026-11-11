@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# 运行产物
+logs/
+*.log
+# 实验数据由 --compare 生成(默认提交样本, 如需忽略可取消下行注释)
+# experiments/results.json
+
+# 敏感配置(真实账号/Cookie)
+config/local.yaml
+config/credentials.yaml
+
+# 编辑器
+.vscode/
+.idea/

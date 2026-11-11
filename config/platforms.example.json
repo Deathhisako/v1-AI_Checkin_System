@@ -1,0 +1,33 @@
+{
+  "platforms": [
+    {
+      "key": "my_forum",
+      "name": "我的论坛",
+      "type": "forum",
+      "enabled": true,
+      "username": "your_username",
+      "password": "your_password",
+      "cookie": {},
+      "extra": {
+        "cookie_ttl": 4,
+        "encrypt_ttl": 6,
+        "captcha_rate": 0.35,
+        "transient_rate": 0.15,
+        "risk_rate": 0.05
+      }
+    },
+    {
+      "key": "my_pt",
+      "name": "我的PT站",
+      "type": "pt",
+      "enabled": true,
+      "extra": {
+        "cookie_ttl": 8,
+        "encrypt_ttl": 10,
+        "captcha_rate": 0.2,
+        "transient_rate": 0.1,
+        "risk_rate": 0.03
+      }
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+# AI辅助自动化生活类签到系统 - 应用配置
+# 演示模式: ai.provider=mock, 无需 API Key 即可运行自愈演示
+
+log_dir: "logs"
+
+scheduler:
+  interval_seconds: 60     # 循环间隔
+  once: true               # 演示: 单次运行(每平台执行一轮签到)
+  run_count: 0             # 0 = 不限次数
+
+self_heal:
+  max_attempts: 5          # 单次签到最大尝试次数(自愈上限)
+  retry_delay: 1.0         # 基础退避(秒)
+  max_backoff: 10.0        # 最大退避
+  relogin_on_cookie: true  # Cookie过期自动重登
+  reanalyze_on_encryption: true  # 加密升级自动重析
+  fallback_browser: true   # 必要时降级浏览器自动化
+  alert_on_failure: true   # 最终失败报警
+
+ai:
+  llm_provider: "mock"     # mock | openai | dashscope | custom
+  llm_api_key: ""
+  llm_model: ""
+  ocr_provider: "mock"     # mock | paddleocr | custom
+  vision_provider: "mock"  # mock | clip | custom
+
+notification:
+  enabled: false
+  channel: "console"       # console | webhook | email
+  webhook_url: ""
+
+# ---------- 平台清单(演示) ----------
+platforms:
+  - key: "demo_forum"
+    name: "示例论坛签到"
+    type: "demo"
+    enabled: true
+    username: "demo_user"
+    extra:
+      cookie_ttl: 4        # 每4次签到后Cookie过期 -> 触发自愈重登
+      encrypt_ttl: 6       # 每6次后加密升级 -> 触发重析
+      captcha_rate: 0.35   # 35%概率出现验证码
+      transient_rate: 0.15
+      risk_rate: 0.05
