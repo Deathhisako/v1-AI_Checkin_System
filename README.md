@@ -8,8 +8,8 @@
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green)
-![CI](https://github.com/<你的用户名>/AI_Checkin_System/actions/workflows/ci.yml/badge.svg)
-![Checkin](https://github.com/<你的用户名>/AI_Checkin_System/actions/workflows/checkin.yml/badge.svg)
+![CI](https://github.com/Deathhisako/v1-AI_Checkin_System/actions/workflows/ci.yml/badge.svg)
+![Checkin](https://github.com/Deathhisako/v1-AI_Checkin_System/actions/workflows/checkin.yml/badge.svg)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)
 ![Version](https://img.shields.io/badge/version-0.6.8-orange)
 
@@ -196,7 +196,7 @@ AI_Checkin_System/
 
 ### 徽章
 
-把 README 顶部的 `<你的用户名>` 替换为你的 GitHub 用户名，CI/签到状态徽章即生效。
+徽章地址已指向本仓库（v1-AI_Checkin_System），CI/签到状态徽章即可显示。
 
 ## 十一、综合报告与演示视频
 
