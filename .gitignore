@@ -18,3 +18,8 @@ config/credentials.yaml
 # 编辑器
 .vscode/
 .idea/
+
+# 演示/测试产物
+scripts/_*.png
+scripts/_*.jpg
+scripts/_test_demo.mp4
